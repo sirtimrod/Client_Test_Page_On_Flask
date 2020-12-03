@@ -1,0 +1,142 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.conatiner {
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px 30px;
+    margin: 0 auto;
+}
+
+.list__item + .list__item {
+    margin-top: 5px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list__item {
+    display: inline-block;
+}
+
+.list__button::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: grey;
+    top: 50%;
+    left: -10px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+.list__button {
+    cursor: pointer;
+    padding: 3px;
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+}
+.list__button:focus {
+    outline: none;
+}
+
+.list__item > ul.list {
+    padding-left: 40px;
+}
+
+.list__item_has-component {
+    height: 25px;
+    user-select: none;
+}
+
+.list__item_has-component>.list {
+    visibility: hidden;
+}
+
+/* отключаем ограничение высоты если есть класс active */
+.list__item_has-component.active {
+    height: auto;
+}
+
+/* показываем внитренний список если есть класс active */
+.list__item_has-component.active>.list {
+    visibility: visible;
+    height: auto;
+}
+
+.list__item_has-no-component .list__button {
+    cursor: default;
+}
+
+/* ограничиваем высоту, если нет класса active, что бы не было пустого места в списках */
+.list__item_has-children {
+    height: 25px;
+    user-select: none;
+}
+
+.list__item_has-component.list__item_has-no-children>.list__button::before {
+    background-color: blue;
+}
+
+.list__item_has-no-component.list__item_has-children>.list__button, .list__item_has-component.list__item_has-no-children>.list__button{
+    cursor: pointer;
+}
+
+.list__item_has-no-component.list__item_has-children>.list__button::before {
+    background-color: green;
+}
+
+.list__item_has-no-component.list__item_has-no-children>.list__button::before {
+    background-color: red;
+}
+
+/* скрываем внитренний список если нет класса active */
+.list__item_has-children>.list {
+    visibility: hidden;
+}
+
+/* отключаем ограничение высоты если есть класс active */
+.list__item_has-children.active {
+    height: auto;
+}
+
+/* показываем внитренний список если есть класс active */
+.list__item_has-children.active>.list {
+    visibility: visible;
+    height: auto;
+}
+
+.list__item_has-no-children .list__button {
+    cursor: default;
+}
+
+.list__item_has-no-children.active>.list {
+    visibility: visible;
+    height: auto;
+    max-height: 300px;
+    overflow-y: auto;
+}

@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+
+{% block title %}
+
+    Первая страница
+
+{% endblock %}
+
+{% block content %}
+
+    <h1>Страница выбора БД</h1>
+    <form action="" method="post">
+		<p>
+	    <label for="name">Name</label>
+	    <input type="text" name="name">
+		</p>
+		<p>
+	    <label for="pass">Password</label>
+	    <input type="text" name="passw">
+		</p>
+		<p>
+	    <label for="host">Host</label>
+	    <input type="text" name="host">
+		</p>
+		<p>
+	    <label for="port">Port</label>
+	    <input type="text" name="port">
+		</p>
+		<p>
+	    <label for="name_db">Name of DB</label>
+	    <input type="text" name="db_name">
+		</p>
+		<p>
+	    <input type="submit" value="Submit">
+		</p>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Страница авторизации</title>
+	<style>
+	    body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background-color: #1E90FF;
+		}
+	    .form {
+	    	display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			background-color: #f0f5f0;
+			border-radius: 5px;
+	    }
+	    .auth {
+	    	font-family: sans-serif;
+	    	font-size: 30px;
+	    	color: #222422;
+	    	text-transform: uppercase;
+	    	padding: 0 20px;
+	    }
+	    .form input {
+	    	font-size: 18px;
+	    	padding: 5px;
+	    	margin: 5px 0;
+	    	outline-color: #f55e18;
+	    }
+	    .form-btn {
+	    		font-size: 25px;
+	    		text-transform: uppercase;
+	    		font-family: sans-serif;
+	    		font-weight: bold;
+	    		margin-top: 5px;
+	    		margin-bottom: 15px;
+	    		padding: 5px 70px;
+	    		color: #fff;
+	    		background: linear-gradient(25deg, red, #0000FF);
+	    		border: none;
+	    		outline: none;
+	    		border-radius: 5px;
+	</style>
+</head>
+<body>
+	<form action="" method="post">
+		<div class="form">
+			<h1 class="auth">Авторизация</h1>
+			<input type="text" placeholder="Логин" name="username">
+			<input type="text" placeholder="Пароль" name="password">
+			<button class="form-btn">Войти</button>
+
+		</div>
+	</form>
+</body>
+</html>
